@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cinic10-resnet-vit"
+version = "0.1.0"
+description = "CSCI 677 ResNet-18 and ViT experiments on CINIC-10"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.4,<3",
+  "torchvision>=0.19,<1",
+  "transformers>=4.45,<6",
+  "matplotlib>=3.9,<4",
+  "numpy>=1.25,<3",
+  "Pillow>=10,<13",
+  "tqdm>=4.66,<5",
+]
+
+[project.scripts]
+cinic10 = "cinic10.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
